@@ -1,0 +1,30 @@
+# execute.py
+import pandas as pd
+
+def main():
+    # Read the data
+    df = pd.read_excel("data.xlsx")
+
+    # Compute revenue
+    df['revenue'] = df['price'] * df['quantity']
+
+    # Round count
+    row_count = len(df)
+
+    # Regions: count of distinct regions
+    unique_regions = df['region'].nunique()
+
+    # Top n products by revenue
+    top_n_products = df.groupby("product")["revenue"].sum().nlargest(3)
+
+    # Create report dictionary
+    report = {
+        "row_count": row_count,
+        "regions": unique_regions,
+        "top_n_revenue_products": top_n_products.to_dict()
+    }
+
+    print(report)
+
+if __name__ == "__main__":
+    main()
