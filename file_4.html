@@ -1,0 +1,28 @@
+# README.md
+# Project Overview
+This project is designed to process sales data using Python and generate a report containing product revenue information. 
+
+# Features
+- Reads data from an Excel file.
+- Computes total revenue for each product.
+- Provides the count of distinct regions.
+- Identifies the top 3 products by revenue.
+- Outputs results in JSON format.
+
+# Setup Instructions
+1. Clone the repository: `git clone <repository-url>`
+2. Change into the project directory: `cd <project-directory>`
+3. Make sure you have Python 3.11+ installed.
+4. Install required packages: `pip install pandas ruff`.
+
+# Usage Guide
+- Place your sales data in `data.xlsx`.
+- Run the script: `python execute.py`. This will generate `result.json`.
+
+# Code Structure
+- `execute.py`: The main script responsible for data processing.
+- `data.csv`: Output CSV version of the original Excel data.
+- `.github/workflows/ci.yml`: CI configuration file for GitHub Actions.
+
+# License
+This project is licensed under the MIT License.
